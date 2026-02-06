@@ -11,24 +11,24 @@ class HomeController extends Controller
     public function index()
     {
         try {
-            // Ambil SEMUA koleksi untuk ditampilkan di bagian "Koleksi"
-            $collections = Collection::all(); // atau ->latest()->get() jika mau urut terbaru
-
-            // Tetap ambil highlighted untuk keperluan lain (opsional)
+            // Hanya untuk stats di homepage
+            $totalCollections = Collection::count();
+            
+            // Ambil beberapa koleksi untuk highlight jika mau (opsional)
             $highlightedCollections = Collection::where('is_highlighted', true)
-                ->limit(6)
+                ->limit(3)
                 ->get();
 
-            $totalCollections = Collection::count();
-
             return view('frontend.home', [
-                'collections' => $collections,             // ← ini yang dipakai di bagian #collections
                 'highlightedCollections' => $highlightedCollections,
                 'totalCollections' => $totalCollections
             ]);
 
         } catch (\Exception $e) {
-            dd("Error: " . $e->getMessage());
+            return view('frontend.home', [
+                'highlightedCollections' => collect(),
+                'totalCollections' => 0
+            ]);
         }
     }
 }

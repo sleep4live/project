@@ -813,34 +813,32 @@
 <body>
             <!-- nav -->
 
-   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+ <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-
-        <!-- logo segala macem -->
         <img src="/assets/img/ipb.png" alt="Logo IPB" height="100" class="me-3">
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#hero">Beranda</a>
+                    <a class="nav-link" href="{{ route('home') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">Tentang Kami</a>
+                    <a class="nav-link" href="{{ route('about') }}">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#collections">Koleksi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#map">Kontak & Lokasi</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-admin-login ms-2" href="/login">
-                        <i class="fas fa-user-circle me-2"></i>Admin Login
+                    <a class="nav-link" href="{{ route('collections.index') }}">
+                        <i class="fas fa-archive me-1"></i>Koleksi
                     </a>
                 </li>
+               <li class="nav-item">
+    <a class="nav-link btn btn-admin-login ms-2" href="{{ route('login') }}">
+        <i class="fas fa-user-circle me-2"></i>Admin Login
+    </a>
+</li>
             </ul>
         </div>
     </div>
@@ -852,36 +850,24 @@
     <div class="hero-content fade-in-up">
         <h1 class="display-4 mb-4">Koleksi Langka Nusantara</h1>
         <p class="lead mb-4">Temukan artefak bersejarah dari seluruh penjuru Indonesia</p>
-        <a href="#collections" class="btn btn-lg">
-            <i class="fas fa-compass me-2"></i>Jelajahi
-        </a>
     </div>
     </div>
            <div class="slide" style="background-image: url('{{ asset('assets/img/sejarahwan.jpg') }}');">
         <div class="hero-content fade-in-up">
                 <h1 class="display-4 mb-4">Warisan Budaya Abadi</h1>
                 <p class="lead mb-4">Menyambungkan masa lalu dengan masa depan melalui artefak bersejarah</p>
-                <a href="#collections" class="btn btn-lg">
-                    <i class="fas fa-eye me-2"></i>Lihat Semua
-                </a>
             </div>
         </div>
           <div class="slide" style="background-image: url('{{ asset('assets/img/war-cilembu.jpg') }}');">
     <div class="hero-content fade-in-up">
                 <h1 class="display-4 mb-4">Koleksi Langka Nusantara</h1>
                 <p class="lead mb-4">Temukan artefak bersejarah dari seluruh penjuru Indonesia</p>
-                <a href="#collections" class="btn btn-lg">
-                    <i class="fas fa-compass me-2"></i>Jelajahi
-                </a>
             </div>
         </div>
             <div class="slide" style="background-image: url('{{ asset('assets/img/kunjungan-armuse.jpeg') }}');">
     <div class="hero-content fade-in-up">
                 <h1 class="display-4 mb-4">Museum untuk Semua Kalangan</h1>
                 <p class="lead mb-4">Terbuka untuk pelajar, peneliti, dan masyarakat umum</p>
-                <a href="#collections" class="btn btn-lg">
-                    <i class="fas fa-door-open me-2"></i>Kunjungi
-                </a>    
             </div>
         </div>
            <div class="slide" style="background-image: url('{{ asset('assets/img/kunjungan-armuse.jpeg') }}');">
@@ -895,159 +881,6 @@
         </div>
     </section>
 
-    <!-- Tentang Kami -->
-    <section id="about" class="bg-white">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title text-center">Tentang Kami</h2>
-            </div>
-
-
-<div class="row mb-5">
-    <div class="col-lg-12">
-        <div class="image-slider">
-            <div class="img-slide active" style="background-image: url('{{ asset('assets/img/hal-luar.png') }}');"></div>
-        </div>
-    </div>
-</div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="about-content">
-                        <p class="fs-5 mb-4">
-                            Museum IPB didirikan dengan misi mulia untuk melestarikan warisan pendidikan tinggi pertanian, kelautan, dan biosains tropika di Indonesia. 
-                            Kami menjadi pusat pembelajaran yang menghubungkan masa lalu, masa kini, dan masa depan untuk memperkuat identitas dan karakter bangsa.
-                        </p>
-                        <p class="fs-5 mb-4">
-                            Melalui program edukasi, pameran interaktif, dan kegiatan budaya, kami berharap dapat menginspirasi 
-                            generasi muda untuk mencintai dan menjaga kekayaan budaya serta sejarah pendidikan bangsa yang tak ternilai harganya.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!--  Visi dan Misi -->
-            <div class="row mt-5">
-                <div class="col-lg-12">
-                    <div class="accordion accordion-about" id="visiMisiAccordion">
-                        <!-- Visi -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingVisi">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVisi" aria-expanded="true" aria-controls="collapseVisi">
-                                    <i class="fas fa-eye me-3"></i> Visi Museum IPB
-                                </button>
-                            </h2>
-                            <div id="collapseVisi" class="accordion-collapse collapse show" aria-labelledby="headingVisi" data-bs-parent="#visiMisiAccordion">
-                                <div class="accordion-body">
-                                    <div class="visi-content">
-                                        <div class="text-center mb-4">
-                                            <i class="fas fa-bullseye fa-3x text-primary mb-3"></i>
-                                            <h4 class="mb-3">Visi Museum IPB</h4>
-                                        </div>
-                                        <blockquote class="blockquote fs-4 fst-italic text-center px-4 py-3 rounded-3" style="background-color: rgba(52, 152, 219, 0.1); border-left: 4px solid var(--accent-color);">
-                                           Menjadikan memori kolektif pendidikan tinggi pertanian, kelautan, dan biosains tropika sebagai pusat pembelajaran untuk memperkuat identitas dan karakter bangsa
-                                        </blockquote>   
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Misi -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingMisi">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMisi" aria-expanded="false" aria-controls="collapseMisi">
-                                    <i class="fas fa-bullseye me-3"></i> Misi Museum IPB
-                                </button>
-                            </h2>
-                            <div id="collapseMisi" class="accordion-collapse collapse" aria-labelledby="headingMisi" data-bs-parent="#visiMisiAccordion">
-                                <div class="accordion-body">
-                                    <div class="misi-content">
-                                        <div class="text-center mb-4">
-                                            <i class="fas fa-tasks fa-3x text-primary mb-3"></i>
-                                            <h4 class="mb-3">Misi Museum IPB</h4>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="mission-list">
-                                                    <div class="mission-item p-3 mb-3 rounded-3" style="background-color: rgba(231, 76, 60, 0.1); border-left: 4px solid var(--secondary-color);">
-                                                        <h5 class="mb-2">a. Fungsi Informasi dan Konservasi</h5>
-                                                        <p class="mb-0">Melaksanakan fungsinya sebagai sumber informasi dan konservasi sejarah masa lalu, masa kini, dan masa depan.</p>
-                                                    </div>
-                                                    <div class="mission-item p-3 mb-3 rounded-3" style="background-color: rgba(46, 204, 113, 0.1); border-left: 4px solid #2ecc71;">
-                                                        <h5 class="mb-2">b. Memelihara Warisan Pendidikan</h5>
-                                                        <p class="mb-0">Memelihara warisan kelahiran dan tumbuh kembang pendidikan tinggi pertanian Indonesia.</p>
-                                                    </div>
-                                                    <div class="mission-item p-3 mb-3 rounded-3" style="background-color: rgba(155, 89, 182, 0.1); border-left: 4px solid #9b59b6;">
-                                                        <h5 class="mb-2">c. Pengembangan Wisata Pendidikan</h5>
-                                                        <p class="mb-0">Mengembangkan museum sebagai wisata pendidikan yang rekreatif.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="collections" class="bg-white py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title text-center">Koleksi Kami</h2>
-                <p class="section-subtitle mx-auto">
-                    Temukan berbagai koleksi yang kami rawat dengan penuh dedikasi
-                </p>
-            </div>
-
-            @if(isset($collections) && !$collections->isEmpty())
-
-                <!-- Container Horizontal -->
-                <div id="collections-container">
-                    @foreach($collections as $collection)
-                        <div class="collection-item" data-id="{{ $collection->id }}">
-                            <div class="card collection-card">
-                                @if($collection->image)
-                                    <img src="{{ asset('uploads/' . $collection->image) }}" 
-                                         class="card-img-top" 
-                                         alt="{{ $collection->name }}"
-                                         style="height: 320px; object-fit: cover;">
-                                @else
-                                    <div class="card-img-top d-flex align-items-center justify-content-center bg-light" 
-                                         style="height: 320px; color: #6c757d; font-size: 1.2rem;">
-                                        <i class="fas fa-image fa-4x mb-3"></i>
-                                        <p class="mb-0">Tidak ada gambar</p>
-                                    </div>
-                                @endif
-                                <div class="card-body d-flex flex-column p-4">
-                                    <!-- DIHAPUS: Kategori badge dihapus sesuai permintaan -->
-                                    <h5 class="card-title fw-bold mb-3">{{ $collection->name }}</h5>
-                                    <p class="card-text small flex-grow-1 mb-4">
-                                        {{ Str::limit($collection->description, 120) }}
-                                    </p>
-                                    <button class="btn btn-view-detail show-detail" data-id="{{ $collection->id }}">
-                                        <i class="fas fa-info-circle me-2"></i>Lihat Detail
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            @else
-                <div class="text-center py-5">
-                    <div class="mb-4">
-                        <i class="fas fa-box-open fa-4x text-muted"></i>
-                    </div>
-                    <h4 class="mb-3">Belum ada koleksi yang tersedia.</h4>
-                    <p class="text-muted">Koleksi sedang dalam proses kurasi.</p>
-                </div>
-            @endif
-        </div>
-    </section>
-
       <!-- stats -->
     <section class="bg-light">
         <div class="container">
@@ -1055,7 +888,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="stats-box" style="background: linear-gradient(135deg, #2C3E50, #4A6491);">
                         <h3>{{ $totalCollections ?? '1500' }}</h3>
-                        <p>Koleksi Unggulan</p>
+                        <p>Koleksi</p>
                         <i class="fas fa-archive fa-2x mt-3" style="opacity: 0.7;"></i>
                     </div>
                 </div>
@@ -1077,54 +910,6 @@
         </div>
     </section>
 
-    <section id="map" class="bg-light">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="section-title text-center">Kontak & Lokasi</h2>
-      <p class="section-subtitle mx-auto">
-        Kunjungi kami di lokasi berikut atau hubungi untuk informasi lebih lanjut
-      </p>
-    </div>
-    <div class="row">
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <!-- Google Maps Embed yang clickable -->
-        <iframe 
-         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31709.85782019406!2d106.7063600347656!3d-6.555449800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c58e45a47b89%3A0x81cebe49013f2a0e!2sMuseum%20dan%20Galeri%20IPB%20University!5e0!3m2!1sid!2sid!4v1769503539696!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-          height="400" 
-          style="border:0; border-radius: 12px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);"
-          allowfullscreen="" 
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-      <div class="col-lg-6">
-        <div class="bg-white p-4 rounded-3 shadow h-100">
-          <h4 class="mb-4">Informasi Kontak</h4>
-          <div class="mb-4">
-            <h6><i class="fas fa-map-marker-alt text-primary me-2"></i>Alamat</h6>
-            <p class="ms-4">Kampus IPB Dramaga, Jl. Raya Dramaga, Bogor, Jawa Barat 16680</p>
-          </div>
-          <div class="mb-4">
-            <h6><i class="fas fa-phone text-primary me-2"></i>Telepon</h6>
-            <p class="ms-4">(0251) 8621748</p>
-          </div>
-        <div class="mb-4">
-            <h6><i class="fas fa-envelope text-primary me-2"></i>Email</h6>
-            <p class="ms-4">museum@apps.ipb.ac.id</p>
-          </div>
-        <div class="mb-4">
-            <h6><i class="fas fa-clock text-primary me-2"></i>Jam Operasional</h6>
-            <p class="ms-4">Senin–Jumat: 09.00–16.00 WIB</p>
-            <p class="ms-4">Sabtu: 09.00–14.00 WIB</p>
-            <p class="ms-4">Minggu & Hari Libur Nasional: Tutup</p>
-        </div>
-          <div class="social-icons">
-            <a href="https://www.instagram.com/museumipb/" title="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
     <!-- Footer -->
     <footer class="bg-blue text-white py-5">

@@ -77,7 +77,7 @@
     <div class="login-container">
         <h2>Login Admin</h2>
 
-            <!-- untuk mengecek error -->
+            <!-- untuk ngecek error -->
 
         @if ($errors->any())
             <div class="error">
