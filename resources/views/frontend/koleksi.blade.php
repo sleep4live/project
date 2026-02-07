@@ -17,17 +17,19 @@
             --text-color: #000000;
             --shadow-color: rgba(0,0,0,0.08);
             --border-color: rgba(0,0,0,0.1);
+            --brand-color: #2C3E50;
         }
         
         [data-theme="dark"] {
-            --primary-color: #000000;
-            --secondary-color: #000000;
-            --accent-color: #000000;
-            --card-bg: #000000;
+            --primary-color: #1a1a1a;
+            --secondary-color: #252525;
+            --accent-color: #2d2d2d;
+            --card-bg: #1e1e1e;
             --body-bg: #121212;
-            --text-color: #ffffff;
-            --shadow-color: rgba(255,255,255,0.1);
-            --border-color: rgba(255,255,255,0.2);
+            --text-color: #e0e0e0;
+            --shadow-color: rgba(0,0,0,0.3);
+            --border-color: rgba(255,255,255,0.1);
+            --brand-color: #404040; /* Abu-abu netral, bukan biru */
         }
         
         body {
@@ -65,7 +67,7 @@
         }
         
         .btn-admin-login {
-            background: #2C3E50;
+            background: var(--brand-color);
             color: white !important;
             border-radius: 8px;
             padding: 0.5rem 1.5rem !important;
@@ -75,7 +77,7 @@
         }
         
         .btn-admin-login:hover {
-            background: #1a252f;
+            background: #2a2a2a;
             transform: translateY(-2px);
         }
         
@@ -113,7 +115,7 @@
         
         /* Hero Section */
         .collections-hero {
-            background: #2C3E50;
+            background: var(--brand-color);
             color: white;
             padding: 5rem 0;
             margin-bottom: 3rem;
@@ -146,7 +148,7 @@
             left: 0;
             width: 80px;
             height: 4px;
-            background-color: #2C3E50;
+            background-color: var(--brand-color);
         }
         
         /* Collection Cards */
@@ -210,10 +212,10 @@
             line-height: 1.6;
         }
         
-        /* Category Badge */
+        /* Category Badge - SEKARANG ABU-ABU NETRAL */
         .category-badge {
             display: inline-block;
-            background: #2C3E50;
+            background: var(--brand-color);
             color: white;
             padding: 0.3rem 1rem;
             border-radius: 20px;
@@ -270,7 +272,7 @@
         
         /* Footer */
         footer {
-            background-color: #2C3E50;
+            background-color: var(--brand-color);
             color: white;
             padding: 3rem 0 2rem;
             margin-top: 4rem;
@@ -288,34 +290,40 @@
         }
         
         [data-theme="dark"] .btn-close {
-            filter: invert(0);
+            filter: invert(0.8);
         }
         
-        /* Buttons */
+        /* Buttons - SEMUA MENGGUNAKAN ABU-ABU NETRAL DI DARK MODE */
         .btn-outline-primary {
-            border-color: #2C3E50;
-            color: #2C3E50;
+            border-color: var(--brand-color);
+            color: var(--brand-color);
         }
         
         .btn-outline-primary:hover {
-            background-color: #2C3E50;
-            border-color: #2C3E50;
+            background-color: var(--brand-color);
+            border-color: var(--brand-color);
             color: white;
         }
         
         .btn-primary {
-            background-color: #2C3E50;
-            border-color: #2C3E50;
+            background-color: var(--brand-color);
+            border-color: var(--brand-color);
         }
         
         .btn-primary:hover {
-            background-color: #1a252f;
-            border-color: #1a252f;
+            background-color: #333333;
+            border-color: #333333;
         }
         
         .btn-secondary {
             background-color: #6c757d;
             border-color: #6c757d;
+        }
+        
+        [data-theme="dark"] .btn-secondary {
+            background-color: #555555;
+            border-color: #555555;
+            color: #e0e0e0;
         }
         
         /* Text Muted */
@@ -328,12 +336,19 @@
             background-color: var(--card-bg) !important;
         }
         
-        .bg-dark {
-            background-color: #2C3E50 !important;
+        .badge {
+            background-color: var(--brand-color) !important;
+            color: white !important;
         }
         
-        .badge {
-            background-color: #2C3E50 !important;
+        /* Footer Links */
+        .text-white-50 {
+            color: rgba(255, 255, 255, 0.6) !important;
+        }
+        
+        /* Icon folder di judul kategori */
+        [data-theme="dark"] .category-section h3 i {
+            color: #555555 !important;
         }
         
         /* Responsive */
@@ -470,9 +485,7 @@
                         <div class="category-section">
                             <div class="d-flex justify-content-between align-items-center mb-4">
                                 <h3 class="h4 mb-0">
-                                    <i class="fas fa-folder me-2" 
-                                       style="color: #2C3E50;">
-                                    </i>
+                                    <i class="fas fa-folder me-2"></i>
                                     {{ $category->name }}
                                 </h3>
                                 <span class="badge rounded-pill px-3 py-2">

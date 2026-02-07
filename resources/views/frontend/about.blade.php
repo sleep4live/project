@@ -21,15 +21,19 @@
             --card-bg: #FFFFFF;
             --shadow-color: rgba(0,0,0,0.08);
             --border-color: rgba(0,0,0,0.1);
+            --brand-color: #2C3E50;
+            --navbar-bg: #1E3A8A;
         }
         
         [data-theme="dark"] {
-            /* Dark theme overrides */
+            /* Dark theme overrides - 100% Abu-abu Netral */
             --body-bg: #121212;
-            --text-color: #ffffff;
+            --text-color: #e0e0e0;
             --card-bg: #1e1e1e;
-            --shadow-color: rgba(255,255,255,0.1);
-            --border-color: rgba(255,255,255,0.2);
+            --shadow-color: rgba(0,0,0,0.3);
+            --border-color: rgba(255,255,255,0.1);
+            --brand-color: #404040;
+            --navbar-bg: #1a1a1a;
         }
         
         * {
@@ -49,16 +53,16 @@
         
         /* Navigation */
         .navbar {
-            background: #1E3A8A;
+            background: var(--navbar-bg);
             backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             padding: 0.8rem 0;
             transition: var(--transition);
         }
 
         .navbar.scrolled {
-            background: #1E3A8A;
-            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.4);
+            background: var(--navbar-bg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
 
         .navbar-nav .nav-link {
@@ -71,14 +75,14 @@
         }
 
         .navbar-nav .nav-link:hover {
-            color:white !important;
+            color: white !important;
             background-color: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
         }
 
         .btn-admin-login {
-            background:green;
-            color: #1E3A8A !important;
+            background: green;
+            color: white !important;
             border-radius: 8px;
             padding: 0.5rem 1.5rem !important;
             font-weight: 700;
@@ -87,7 +91,8 @@
         }
 
         .btn-admin-login:hover {
-            color: black !important;
+            color: white !important;
+            background: #228B22;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
         }
@@ -126,7 +131,7 @@
         
         /* Hero Section untuk About */
         .about-hero {
-            background: linear-gradient(135deg, #1E3A8A 0%, #2C3E50 100%);
+            background: linear-gradient(135deg, var(--brand-color) 0%, var(--brand-color) 100%);
             color: white;
             padding: 5rem 0;
             text-align: center;
@@ -155,7 +160,7 @@
             font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            color: var(--primary-color);
+            color: var(--text-color);
             position: relative;
             padding-bottom: 0.5rem;
         }
@@ -167,7 +172,7 @@
             left: 0;
             width: 80px;
             height: 4px;
-            background-color: var(--secondary-color);
+            background-color: var(--brand-color);
         }
         
         .section-title.text-center::after {
@@ -176,7 +181,8 @@
         }
         
         .section-subtitle {
-            color: #6c757d;
+            color: var(--text-color);
+            opacity: 0.7;
             font-size: 1.1rem;
             margin-bottom: 3rem;
             max-width: 700px;
@@ -198,7 +204,7 @@
             position: relative;
             overflow: hidden;
             border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 35px var(--shadow-color);
             margin-bottom: 2rem;
         }
         
@@ -224,7 +230,7 @@
         }
         
         .accordion-button {
-            background-color: var(--primary-color);
+            background-color: var(--brand-color);
             color: white;
             font-weight: 600;
             padding: 1.2rem 1.5rem;
@@ -234,14 +240,14 @@
         }
         
         .accordion-button:not(.collapsed) {
-            background-color: var(--accent-color);
+            background-color: #505050;
             color: white;
             box-shadow: none;
         }
         
         .accordion-button:focus {
             box-shadow: none;
-            border-color: rgba(0,0,0,0.1);
+            border-color: var(--border-color);
         }
         
         .accordion-button::after {
@@ -251,7 +257,7 @@
         .accordion-body {
             padding: 1.5rem;
             background-color: var(--card-bg);
-            border-left: 4px solid var(--accent-color);
+            border-left: 4px solid var(--brand-color);
             font-size: 1.05rem;
             line-height: 1.7;
             color: var(--text-color);
@@ -262,7 +268,7 @@
             margin-bottom: 1rem;
             border-radius: 8px !important;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px var(--shadow-color);
         }
         
         .accordion-item:last-of-type {
@@ -271,19 +277,19 @@
         
         /* Stats Section */
         .stats-box {
-            background: var(--primary-color);
+            background: var(--brand-color);
             color: white;
             padding: 2.5rem 1.5rem;
             border-radius: 12px;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px var(--shadow-color);
             transition: var(--transition);
             height: 100%;
         }
         
         .stats-box:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 15px 30px var(--shadow-color);
         }
         
         .stats-box h3 {
@@ -307,7 +313,7 @@
             justify-content: center;
             color: white;
             font-size: 1.2rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 25px var(--shadow-color);
             position: relative;
             overflow: hidden;
         }
@@ -327,7 +333,7 @@
         
         /* Footer */
         footer {
-            background-color: var(--primary-color);
+            background-color: var(--brand-color);
             color: white;
             padding: 3rem 0 2rem;
         }
@@ -362,8 +368,18 @@
         }
         
         .social-icons a:hover {
-            background-color: var(--secondary-color);
+            background-color: #555555;
             transform: translateY(-3px);
+        }
+        
+        /* Blockquote dan Mission Items */
+        .blockquote {
+            background-color: rgba(64, 64, 64, 0.1) !important;
+            border-left: 4px solid var(--brand-color) !important;
+        }
+        
+        .mission-item {
+            border-left: 4px solid var(--brand-color) !important;
         }
         
         /* Responsive Design */
@@ -464,16 +480,21 @@
         
         [data-theme="dark"] .text-dark,
         [data-theme="dark"] .text-muted {
-            color: rgba(255, 255, 255, 0.7) !important;
+            color: rgba(224, 224, 224, 0.7) !important;
         }
         
         [data-theme="dark"] .btn-close {
-            filter: invert(1);
+            filter: invert(0.8);
+        }
+        
+        /* Contact section info icons */
+        [data-theme="dark"] .text-primary {
+            color: #a0a0a0 !important;
         }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: #1E3A8A;">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <img src="/assets/img/ipb.png" alt="Logo IPB" height="100" class="me-3">
         
@@ -570,7 +591,7 @@
                                         <i class="fas fa-bullseye fa-3x text-primary mb-3"></i>
                                         <h4 class="mb-3">Visi Museum IPB</h4>
                                     </div>
-                                    <blockquote class="blockquote fs-4 fst-italic text-center px-4 py-3 rounded-3" style="background-color: rgba(52, 152, 219, 0.1); border-left: 4px solid var(--accent-color);">
+                                    <blockquote class="blockquote fs-4 fst-italic text-center px-4 py-3 rounded-3">
                                        Menjadikan memori kolektif pendidikan tinggi pertanian, kelautan, dan biosains tropika sebagai pusat pembelajaran untuk memperkuat identitas dan karakter bangsa
                                     </blockquote>   
                                 </div>
@@ -595,15 +616,15 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="mission-list">
-                                                <div class="mission-item p-3 mb-3 rounded-3" style="background-color: rgba(231, 76, 60, 0.1); border-left: 4px solid var(--secondary-color);">
+                                                <div class="mission-item p-3 mb-3 rounded-3">
                                                     <h5 class="mb-2">a. Fungsi Informasi dan Konservasi</h5>
                                                     <p class="mb-0">Melaksanakan fungsinya sebagai sumber informasi dan konservasi sejarah masa lalu, masa kini, dan masa depan.</p>
                                                 </div>
-                                                <div class="mission-item p-3 mb-3 rounded-3" style="background-color: rgba(46, 204, 113, 0.1); border-left: 4px solid #2ecc71;">
+                                                <div class="mission-item p-3 mb-3 rounded-3">
                                                     <h5 class="mb-2">b. Memelihara Warisan Pendidikan</h5>
                                                     <p class="mb-0">Memelihara warisan kelahiran dan tumbuh kembang pendidikan tinggi pertanian Indonesia.</p>
                                                 </div>
-                                                <div class="mission-item p-3 mb-3 rounded-3" style="background-color: rgba(155, 89, 182, 0.1); border-left: 4px solid #9b59b6;">
+                                                <div class="mission-item p-3 mb-3 rounded-3">
                                                     <h5 class="mb-2">c. Pengembangan Wisata Pendidikan</h5>
                                                     <p class="mb-0">Mengembangkan museum sebagai wisata pendidikan yang rekreatif.</p>
                                                 </div>
@@ -635,7 +656,7 @@
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31709.85782019406!2d106.7063600347656!3d-6.555449800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c58e45a47b89%3A0x81cebe49013f2a0e!2sMuseum%20dan%20Galeri%20IPB%20University!5e0!3m2!1sid!2sid!4v1769503539696!5m2!1sid!2sid" 
                     width="100%" 
                     height="400" 
-                    style="border:0; border-radius: 12px; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);"
+                    style="border:0; border-radius: 12px; box-shadow: 0 8px 25px var(--shadow-color);"
                     allowfullscreen="" 
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
@@ -672,7 +693,7 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-blue text-white py-5">
+<footer>
     <div class="container">
         <div class="row">
             <div class="col-lg-4 mb-4 mb-lg-0">
